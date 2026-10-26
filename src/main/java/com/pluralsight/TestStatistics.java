@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Arrays;
+
 public class TestStatistics {
 
     public static void main(String[] args) {
@@ -32,6 +34,18 @@ public class TestStatistics {
 
         double avg = total / scores.length;
 
-        System.out.println(String.format("%.2f", avg));
+        System.out.printf(String.format("%.2f\n", avg));
+
+        //median
+        Arrays.sort(scores);
+        double median;
+        int middle = scores.length / 2;
+        if (scores.length % 2 == 0) {
+            median = (scores[middle-1] + scores[middle]) / 2;
+        } else {
+            median = middle;
+        }/*end*/
+
+        System.out.printf(String.format("%.2f\n", median));
     }
 }
