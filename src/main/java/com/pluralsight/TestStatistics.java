@@ -16,6 +16,7 @@ public class TestStatistics {
             }
         }/*end*/
         double highScore = placeHolder;
+        System.out.println("Highest Score: " + highScore);
 
         placeHolder = 0;
         for (int i = 0; i < scores.length; i++) {
@@ -24,17 +25,17 @@ public class TestStatistics {
             }
         }/*end*/
         double lowScore = placeHolder;
+        System.out.println("Lowest Score: " + lowScore);
 
         double total = 0;
+
         for (double i : scores) {
-            int j = 0;
-            total += scores[j];
-            j++;
+            total += i;
         }
 
         double avg = total / scores.length;
 
-        System.out.printf(String.format("%.2f\n", avg));
+        System.out.printf(String.format("Average: %.2f\n", avg));
 
         //median
         Arrays.sort(scores);
@@ -46,6 +47,6 @@ public class TestStatistics {
             median = middle;
         }/*end*/
 
-        System.out.printf(String.format("%.2f\n", median));
+        System.out.printf(String.format("Median: %.2f\n", median));
     }
 }
